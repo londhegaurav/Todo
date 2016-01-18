@@ -23,7 +23,8 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="1"
-        android:layout_below="@id/btnAddItem">
+        android:layout_below="@id/btnAddItem"
+        android:id="@+id/linearLayout">
 
         <ListView
         android:layout_width="wrap_content"
@@ -32,5 +33,18 @@
         android:layout_marginTop="20dp"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Thing&apos;s ToDo!! "
+        android:id="@+id/textViewLabel"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#333399"
+        android:textStyle="bold"
+        android:textSize="26sp" />
 
 </RelativeLayout>
