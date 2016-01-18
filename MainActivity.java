@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     MyDBHandler dbHandler;
     static String old_itemname = null;
     static String old_date = null;
-
+    static String old_type = null;
+    static String old_color = null;
     static String setColor = "yellow";
     static String type = "default";
 
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         dbHandler = new MyDBHandler(this, null, null, 1);
         lvItems = (ListView) findViewById(R.id.IvItems);
-
         itemsAdapter = new CustomAdapter(getApplicationContext(), R.layout.custom_row);
         lvItems.setAdapter(itemsAdapter);
         populateListView();
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Item deleted!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Item Deleted!!", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -84,12 +84,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             } else {
                 Items items_db = new Items(editText, date, type, setColor);
-                Items items_db_old = new Items(old_itemname, old_date, type, setColor);
+                Items items_db_old = new Items(old_itemname, old_date, old_type, old_color);
                 Log.v("editText", editText);
                 Log.v("date", date);
+                Log.v("type", type);
+                Log.v("color", setColor);
                 Log.v("editTextPostion_", String.valueOf(editTextPostion));
                 Log.v("old_editText", old_itemname);
                 Log.v("old_date", old_date);
+                Log.v("old_type", old_type);
+                Log.v("old_color", old_color);
 
                 dbHandler.updateItem(items_db, items_db_old);
                 populateListView();
@@ -112,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i, 20);
                 old_itemname = its.get_itemname();
                 old_date = its.get_date();
+                old_type = its.get_type();
+                old_color = its.get_color();
                 return true;
             }
         });

@@ -45,8 +45,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
     public void updateItem(Items items, Items items_old) {
         SQLiteDatabase db = getWritableDatabase();
         Log.v("Updating data", items_old.get_itemname() + " & " + items.get_itemname());
-        db.execSQL("Update " + TABLE_ITEMS + " set " + COLUMN_ITEMNAME + "='" + items.get_itemname() + "' , " + COLUMN_DATE + "='" + items.get_date() + "' where " + COLUMN_ITEMNAME + "='" + items_old.get_itemname() + "' and " + COLUMN_DATE + "='" + items_old.get_date() + "';");
-
+        db.execSQL("Update " + TABLE_ITEMS + " set " + COLUMN_ITEMNAME + "='" + items.get_itemname() + "' , " + COLUMN_DATE + "='" + items.get_date() + "' , " + COLUMN_TYPE + "='" + items.get_type() + "' , " + COLUMN_COLOR + "='" + items.get_color() + "' where " + COLUMN_ITEMNAME + "='" + items_old.get_itemname() + "' and " + COLUMN_DATE + "='" + items_old.get_date() + "';");
     }
 
     public void deleteAll() {
@@ -78,7 +77,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_COLOR, items.get_color());
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_ITEMS, null, values);
-
     }
 
     public Cursor executeQuery(String query) {
@@ -87,12 +85,9 @@ public class MyDBHandler extends SQLiteOpenHelper {
             Log.v("Executing select Query", "");
             SQLiteDatabase db = getWritableDatabase();
             c1 = db.rawQuery(query, null);
-
         } catch (Exception e) {
-
             System.out.println("DATABASE ERROR " + e);
         }
         return c1;
     }
-
 }
