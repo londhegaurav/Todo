@@ -40,7 +40,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+NOTE: remove items** from the todo list - This functionality broke at last min was not able to figure out why. Basically for Edit functionality, I was using setOnItemClickListener but it  is not getting invoked on clicking item. So, had to get edit functionality moved to setOnItemLongClickListener and remove item into setOnItemClickListener which is broken.
 
 ## License
 
