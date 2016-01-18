@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Log.v("Table created", "");
         setContentView(R.layout.activity_main);
         dbHandler = new MyDBHandler(this, null, null, 1);
+        //dbHandler.deleteAll();
         lvItems = (ListView) findViewById(R.id.IvItems);
         itemsAdapter = new CustomAdapter(getApplicationContext(), R.layout.custom_row);
         lvItems.setAdapter(itemsAdapter);
@@ -85,15 +86,15 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Items items_db = new Items(editText, date, type, setColor);
                 Items items_db_old = new Items(old_itemname, old_date, old_type, old_color);
-                Log.v("editText", editText);
-                Log.v("date", date);
-                Log.v("type", type);
-                Log.v("color", setColor);
-                Log.v("editTextPostion_", String.valueOf(editTextPostion));
-                Log.v("old_editText", old_itemname);
-                Log.v("old_date", old_date);
-                Log.v("old_type", old_type);
-                Log.v("old_color", old_color);
+//                Log.v("editText", editText);
+//                Log.v("date", date);
+//                Log.v("type", type);
+//                Log.v("color", setColor);
+//                Log.v("editTextPostion_", String.valueOf(editTextPostion));
+//                Log.v("old_editText", old_itemname);
+//                Log.v("old_date", old_date);
+//                Log.v("old_type", old_type);
+//                Log.v("old_color", old_color);
 
                 dbHandler.updateItem(items_db, items_db_old);
                 populateListView();
