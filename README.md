@@ -1,4 +1,4 @@
-# Pre-work - *Name of App Here*
+# Pre-work - Thing’s Todo!!
 
 **Name of your app** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
@@ -34,7 +34,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/LBf8am1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/LBf8am1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
