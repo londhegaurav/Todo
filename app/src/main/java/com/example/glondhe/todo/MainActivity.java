@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "POSITION";
     ArrayList<String> items;
     ArrayList<String> items2;
-    CustomAdapter itemsAdapter;
+    customAdapter itemsAdapter;
     ListDataAdapter listDataAapter;
     ListView lvItems;
     MyDBHandler dbHandler;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         dbHandler = new MyDBHandler(this, null, null, 1);
         //dbHandler.deleteAll();
         lvItems = (ListView) findViewById(R.id.IvItems);
-        itemsAdapter = new CustomAdapter(getApplicationContext(), R.layout.custom_row);
+        itemsAdapter = new customAdapter(getApplicationContext(), R.layout.custom_row);
         lvItems.setAdapter(itemsAdapter);
         populateListView();
         setupListViewListner();

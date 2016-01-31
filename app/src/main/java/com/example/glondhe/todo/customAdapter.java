@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by glondhe on 9/25/15.
  */
-public class CustomAdapter extends ArrayAdapter {
+public class customAdapter extends ArrayAdapter {
 
     private static final String TAG = "Name";
     Context context;
@@ -25,7 +25,7 @@ public class CustomAdapter extends ArrayAdapter {
     List list = new ArrayList<>();
     String color;
 
-    public CustomAdapter(Context context, int resource) {
+    public customAdapter(Context context, int resource) {
         super(context, resource);
         this.context = context;
         dbHandler = new MyDBHandler(context, null, null, 1);
